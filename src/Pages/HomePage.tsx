@@ -1,12 +1,11 @@
 import React from 'react'
-import Form from "../Components/Form";
+import Home from '../Components/Home';
 
 
-export default function HomePage({data}: {data: any}) {
+export default function HomePage() {
   return (
     <>
-      <h1>React TypeScript Starter</h1>
-      <Form />
+      <Home/>
     </>
   );
 }

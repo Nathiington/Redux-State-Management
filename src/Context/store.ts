@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-import {rootReducer} from "./reducer";
+import reducer from "./slice";
 
 const store = configureStore(
     {
-        reducer: rootReducer,
+        reducer: reducer,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk)
     }
 );
