@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import HomePage from "./Pages/HomePage";
+import { useDispatch, useSelector } from "react-redux";
+import { ThunkDispatch } from "redux-thunk";
+import { RootAction, RootState } from "./Context/types";
+// import { fetchData } from "./Context/actions";
 
-function App() {
+export default function App() {
+  
+  // const dispatch : ThunkDispatch<RootState, null, RootAction> = useDispatch();
+  const data = useSelector((state: RootState) => state.user);
+
+  // useEffect(() => {
+
+  //   dispatch(fetchData());
+
+  // }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HomePage data={data} />
+    </>
   );
 }
-
-export default App;
